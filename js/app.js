@@ -8,11 +8,11 @@ $(document).ready(function() {
 
     for(k=0; k<categoria.length;k++){  
      var restaurantes =data[distrito[i]][categoria[k]]["restaurants"];                   
-          //   $rests.append($img);  
+       
           
       for (j=0; j<restaurantes.length;j++ ){ 
        var imagenes = Object.keys(restaurantes[j]); 
-          // $('#image').attr('src',restaurantes[j][imagenes[2]]);
+    
             var $ancor =  $('<a class="list-datos modal-trigger" href="#modal-food"></a>'); 
             var $ancorc =  $('<a class="list-others" href="#"></a>'); 
             var $span1 =$('<span ></span>'); 
@@ -28,8 +28,7 @@ $(document).ready(function() {
             var $div_reserve =$('<div class="reserve"><a href="dishes.html" id="show-dishes" type="submit" class="dishes-content btn">reservar</a></div>');
             $img.attr('src','../assets/img/'+ restaurantes[j][imagenes[2]]);
             
-         //      $div = $('<div></div>');
-         //      $div.append('<p>'+restaurantes[j][imagenes[2]]+'</p>');
+         
            $rests.append($ancor);
            $ancor.append($span1);                         
            $span1.append($img);
@@ -62,23 +61,7 @@ $(document).ready(function() {
           $ancorc.append($input_restaurant);
           $input_restaurant.append(j);
       //    $input_category.append(k);
-      //    $div_reserve,append($input_restaurant);
-      //    $input_restaurant.append(j);
-          
-
-         /* $dishes.on('click',function(){
-             localStorage.setItem('distrito',i);
-             localStorage.setItem('categoria',k); 
-             localStorage.setItem('restaurante',j);   
-           });*/  
-        /*      var $dishes = $('#show-dishes');
-             $dishes.on('click',function(event){
-              event.preventDefault();    
-              console.log('hjjash'+ $(this).eq(0).text()); 
-             });*/
-            
-           //  console.log($rests.append($img)+ $img + $('#image').attr('src',photos));
-             console.log(' distrito ' + i + ' categoria ' + k + ' restaurante ' + j );
+     
                  
         }
          
@@ -108,48 +91,19 @@ var $linksRestaurant = $('img.list-img');
 var $arrLinks = $.makeArray($linksRestaurant);
 $.each($arrLinks, function(i, val) {
     $linksRestaurant.eq(i).on('mouseover', function() {
-     // $('.divmouse').slideToggle();
-       $linksRestaurant.eq(i).parent().siblings().eq(1).slideToggle();
+      $linksRestaurant.eq(i).parent().siblings().eq(1).slideToggle();
      });
 
     $linksRestaurant.eq(i).on('mouseout', function() {
-    //  $('.divmouse').slideToggle();
       $linksRestaurant.eq(i).parent().siblings().eq(1).slideToggle();
 
      });
 });       
 
-/*$linksRestaurant.mouseover(function(){
-    $('.divmouse').slideToggle();
-});
-$linksRestaurant.mouseout(function(){
-    $('.divmouse').slideToggle();
-});*/
 
-/*$buttonDishes.eq(0)[0]
-var idd = $buttonDishes.eq(0)[0].id
-var $a1 = $('#'+idd);  // $('#show-dishes');
-var did = parseInt($a1.parent().parent().children().eq(2).text());
-var cid = parseInt($a1.parent().parent().children().eq(3).text());
-var rid = parseInt($a1.parent().parent().children().eq(4).text());*/
- 
-
-
-
-
-
-
-
-  /*
-  * Modal que materialize me da
-  */
- // Puedes hacer uso de la base de datos a través de la variable `data`
-// constantes para total de puntos tech y hse
-            
   var $ancor =  $('<a>link</a>'); 
   var $span =$('<span>hi</span>');
-            //  var $img = $('<img id="image">');
-            //  $restaurants.append($ancor).append($span).append($img);
+ 
  $('.modal').modal();
  $('#add').click(function() {
     var name = $('.name').val();
@@ -189,7 +143,7 @@ var rid = parseInt($a1.parent().parent().children().eq(4).text());*/
       
     });
 
-function initMap() {
+function smallMap() {
     //console.log(google.maps.version);
       const contenedorMapa = document.getElementById("map");
       const directionsService = new google.maps.DirectionsService();
@@ -197,25 +151,22 @@ function initMap() {
       const geocoder = new google.maps.Geocoder();
       const lima = {lat:-12.1191427, lng:-77.0349046};
       
-    //Caracterisricas del mapa 
       const mapOptions = {
           zoom:18, // 1, 5, 10,15,20
           center:lima,
           disableDefaultUI:true,
         }
-    //Creamos el mapa     
+       
       const mapa = new google.maps.Map(contenedorMapa,mapOptions);
-    //Adjuntamos al mapa las siguientes caracteriristicas
       directionsDisplay.setMap(mapa);
-    //Aqui indicamos el efecto que tendra el marcador  
       const marcador = new google.maps.Marker({
-        position: {lat:lima.lat, lng:lima.lng},
-        animation: google.maps.Animation.DROP,
-        map: mapa
+       position: {lat:lima.lat, lng:lima.lng},
+       animation: google.maps.Animation.DROP,
+       map: mapa
      });   
   }
 
- initMap(); 
+  smallMap(); 
 
 
 
