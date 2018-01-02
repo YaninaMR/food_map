@@ -2,7 +2,7 @@
 ### **Flujo**
 
 #### busqueda por tipo de comida marina
-![image](assets/docs/1.png)
+![image](assets/img/platos/1.png)
 #### busqueda por lugar olivos , san borja o san isidro
 ![image](assets/docs/2.png)
 #### busqueda por nombre de restaurante
